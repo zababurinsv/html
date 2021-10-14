@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connect</title>
+</head>
+<body>
+<div class="__main_test"></div>
+<div class="_main_test"></div>
+<div class="-main_test"></div>
+<div class="--main_test"></div>
+</body>
+<script type="module">
+    import object from './index.mjs'
+    object().then(async (html) => {
+        console.log('html', html)
+    })
+</script>
+</html>
