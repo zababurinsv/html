@@ -8,16 +8,26 @@
   "type": "module",
   "description": "peer to peer connect",
   "license": "GPL-3.0-only",
+  "targets": {
+    "main": false,
+    "module": {
+      "includeNodeModules": true,
+      "optimize": true
+    },
+    "docs": {
+      "source": "./frontend/src/index.html"
+    }
+  },
   "config": {
-    "path_html": "./frontend/src/index.html",
-    "path_mjs": "./frontend/src/index.mjs",
-    "port": 6699
+    "html": "./frontend/src/index.html",
+    "mjs": "./frontend/src/index.mjs",
+    "port": 6999
   },
   "scripts": {
-    "dev": "parcel $npm_package_config_path_html --port $npm_package_config_port --no-source-maps --dist-dir ./docs ",
-    "build:html": "parcel build $npm_package_config_path_html  --no-source-maps --dist-dir ./docs ",
-    "build": "parcel build $npm_package_config_path_mjs --no-source-maps --dist-dir ./dist ",
-    "kill": "kill $(lsof -t -i:$npm_package_config_initiator)",
+    "dev": "parcel $npm_package_config_html --port $npm_package_config_port --no-source-maps --dist-dir ./docs ",
+    "build:html": "parcel build --target docs --no-source-maps --dist-dir ./docs ",
+    "build": "parcel build $npm_package_config_mjs --no-source-maps --dist-dir ./dist ",
+    "kill": "kill $(lsof -t -i:$npm_package_config_port)",
     "clean:parcel": "find . -name \".parcel-cache\" -exec rm -rf '{}' +; "
   },
   "devDependencies": {
@@ -26,9 +36,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zababurinsv/html.git"
-  },
-  "targets": {
-    "main": false
   },
   "keywords": [
     "peer",
