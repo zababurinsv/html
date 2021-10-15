@@ -1,1 +1,818 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>html2obj</title></head><body> <div class="__main_test"></div> <div class="_main_test"></div> <div class="-main_test"></div> <div class="--main_test"></div> </body><script type="module">let e=Object.prototype.hasOwnProperty,l=Object.prototype.toString;var o=function(o){if(null==o)return!0;if("boolean"==typeof o)return!1;if("number"==typeof o)return 0===o;if("string"==typeof o)return 0===o.length;if("function"==typeof o)return 0===o.length;if(Array.isArray(o)){return o instanceof Object?0===Object.keys(o).length:0===o.length}if(o instanceof Error)return""===o.message;if(o.toString==l)switch(o.toString()){case"[object File]":case"[object Map]":case"[object Set]":return 0===o.size;case"[object Object]":for(var a in o)if(e.call(o,a))return!1;return!0}return!1};function a(e,l){var o={},a=(l=l||{}).short,t=e.split("__"),m=t[0].split("_");if(o.block=m[0],m.length>1&&(o.mod=m[1],m[2]&&(o[a?"val":"modVal"]=m[2])),t.length>1){var s=t[1].split("_");o.elem=s[0],s.length>1&&(o[a?"mod":"elemMod"]=s[1],s[2]&&(o[a?"val":"elemModVal"]=s[2]))}return o}function t(e,l,a,t,m,s,n){for(let r in l)switch(r){case"block":case"elemModVal":break;case"elem":switch(s){case 0:o(e[t[0]])&&(e[t[0]]=[]),a&&(o(e[t[0]].main)&&(e[t[0]].main=[]),e[t[0]].main.push(n));break;case 1:o(e[t[0]])&&(e[t[0]]=[]),o(e[t[0]][t[1]])&&(e[t[0]][t[1]]=[]),a&&(o(e[t[0]][t[1]].main)&&(e[t[0]][t[1]].main=[]),e[t[0]][t[1]].main.push(n));break;case 2:o(e[t[0]])&&(e[t[0]]=[]),o(e[t[0]][t[1]])&&(e[t[0]][t[1]]=[]),o(e[t[0]][t[1]][t[2]])&&(e[t[0]][t[1]][t[2]]=[]),a&&(o(e[t[0]][t[1]][t[2]].main)&&(e[t[0]][t[1]][t[2]].main=[]),e[t[0]][t[1]][t[2]].main.push(n));break;case 3:o(e[t[0]])&&(e[t[0]]=[]),o(e[t[0]][t[1]])&&(e[t[0]][t[1]]=[]),o(e[t[0]][t[1]][t[2]])&&(e[t[0]][t[1]][t[2]]=[]),o(e[t[0]][t[1]][t[2]][t[3]])&&(e[t[0]][t[1]][t[2]][t[3]]=[]),a&&(o(e[t[0]][t[1]][t[2]][t[3]].main)&&(e[t[0]][t[1]][t[2]][t[3]].main=[]),e[t[0]][t[1]][t[2]][t[3]].main.push(n));break;case 4:o(e[t[0]])&&(e[t[0]]=[]),o(e[t[0]][t[1]])&&(e[t[0]][t[1]]=[]),o(e[t[0]][t[1]][t[2]])&&(e[t[0]][t[1]][t[2]]=[]),o(e[t[0]][t[1]][t[2]][t[3]])&&(e[t[0]][t[1]][t[2]][t[3]]=[]),o(e[t[0]][t[1]][t[2]][t[3]][t[4]])&&(e[t[0]][t[1]][t[2]][t[3]][t[4]]=[]),a&&(o(e[t[0]][t[1]][t[2]][t[3]][t[4]].main)&&(e[t[0]][t[1]][t[2]][t[3]][t[4]].main=[]),e[t[0]][t[1]][t[2]][t[3]][t[4]].main.push(n));break;default:console.warn("не хватает ячеек")}break;case"elemMod":switch(s){case 0:o(e[t[0]][`${l.elemMod}`])&&(e[t[0]][`${l.elemMod}`]=[]),m?(o(e[t[0]][`${l.elemMod}`][`${l.elemModVal}`])&&(e[t[0]][`${l.elemMod}`][`${l.elemModVal}`]=[]),e[t[0]][`${l.elemMod}`][`${l.elemModVal}`].push(n)):(o(e[t[0]][`${l.elemMod}`].main)&&(e[t[0]][`${l.elemMod}`].main=[]),e[t[0]][`${l.elemMod}`].main.push(n));break;case 1:o(e[t[0]][t[1]][`${l.elemMod}`])&&(e[t[0]][t[1]][`${l.elemMod}`]=[]),m?(o(e[t[0]][t[1]][`${l.elemMod}`][`${l.elemModVal}`])&&(e[t[0]][t[1]][`${l.elemMod}`][`${l.elemModVal}`]=[]),e[t[0]][t[1]][`${l.elemMod}`][`${l.elemModVal}`].push(n)):(o(e[t[0]][t[1]][`${l.elemMod}`].main)&&(e[t[0]][t[1]][`${l.elemMod}`].main=[]),e[t[0]][t[1]][`${l.elemMod}`].main.push(n));break;case 2:o(e[t[0]][t[1]][t[2]][`${l.elemMod}`])&&(e[t[0]][t[1]][t[2]][`${l.elemMod}`]=[]),m?(o(e[t[0]][t[1]][t[2]][`${l.elemMod}`][`${l.elemModVal}`])&&(e[t[0]][t[1]][t[2]][`${l.elemMod}`][`${l.elemModVal}`]=[]),e[t[0]][t[1]][t[2]][`${l.elemMod}`][`${l.elemModVal}`].push(n)):(o(e[t[0]][t[1]][t[2]][`${l.elemMod}`].main)&&(e[t[0]][t[1]][t[2]][`${l.elemMod}`].main=[]),e[t[0]][t[1]][t[2]][`${l.elemMod}`].main.push(n));break;case 3:o(e[t[0]][t[1]][t[2]][t[3]][`${l.elemMod}`])&&(e[t[0]][t[1]][t[2]][t[3]][`${l.elemMod}`]=[]),m?(o(e[t[0]][t[1]][t[2]][t[3]][`${l.elemMod}`][`${l.elemModVal}`])&&(e[t[0]][t[1]][t[2]][t[3]][`${l.elemMod}`][`${l.elemModVal}`]=[]),e[t[0]][t[1]][t[2]][t[3]][`${l.elemMod}`][`${l.elemModVal}`].push(n)):(o(e[t[0]][t[1]][t[2]][t[3]][`${l.elemMod}`].main)&&(e[t[0]][t[1]][t[2]][t[3]][`${l.elemMod}`].main=[]),e[t[0]][t[1]][t[2]][t[3]][`${l.elemMod}`].main.push(n));break;default:console.log("недостаточно ячеек для обработки")}break;default:console.log("неизвестное свойство",r,{obj:l})}}var m=(e,l,o)=>new Promise((async(m,s)=>{let n={};l.forEach((e=>{let l={};"id"===o.type?l=e.id:"class"===o.type?l=1===e.classList.length?e.className:e.classList:"slot"===o.type?l=e.slot:console.warn("неизвестный тип",o);let m={},s={},r={},i=0,d={};if("object"==typeof l)for(let o of l)m=a(o),s=!("elemMod"in m),r="elemModVal"in m,i=0,d={},"elem"in m&&(d=m.elem.split("-"),i=d.length-1),console.log("aaaaaaaaaa",m),t(n,m,s,d,r,i,e);else m=a(l),s=!("elemMod"in m),r="elemModVal"in m,i=0,d={},"elem"in m&&(d=m.elem.split("-"),i=d.length-1),t(n,m,s,d,r,i,e)})),"id"===o.type?e.id=n:"class"===o.type?e.class=n:"slot"===o.type?e.slot=n:console.warn("неизвестный тип"),n={},m(e)}));((e=!0,l=document.body)=>new Promise((async(a,t)=>{try{let t={obj:{},params:{}};t.params.debug=e;let s=l.querySelectorAll("[id]"),n=l.querySelectorAll("[class]");t.obj=await m(t.obj,s,{type:"id"}),t.obj=await m(t.obj,n,{type:"class"}),a(new Proxy(t.obj,{get:(e,l)=>(t.params.debug&&console.log({_:"proxy get",prop:l,obj:e,value:e[l]}),e[l]),set:(e,l,a)=>(t.params.debug&&console.log({_:"proxy set",prop:l,obj:e,value:a}),o(e[l])&&(e[l]=[]),e[l]=a,!0)}))}catch(e){a({message:e.message,success:!0,status:!0})}})))().then((async e=>{console.log("html",e)}));</script></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html2obj</title>
+</head>
+<body>
+<div class="__main_test"></div>
+<div class="_main_test"></div>
+<div class="-main_test"></div>
+<div class="--main_test"></div>
+</body>
+<script>// modules are defined as an array
+// [ module function, map of requires ]
+//
+// map of requires is short require name -> numeric require
+//
+// anything defined in a previous bundle is accessed via the
+// orig method which is the require for previous bundles
+
+(function(modules, entry, mainEntry, parcelRequireName, globalName) {
+  /* eslint-disable no-undef */
+  var globalObject =
+    typeof globalThis !== 'undefined'
+      ? globalThis
+      : typeof self !== 'undefined'
+      ? self
+      : typeof window !== 'undefined'
+      ? window
+      : typeof global !== 'undefined'
+      ? global
+      : {};
+  /* eslint-enable no-undef */
+
+  // Save the require from previous bundle to this closure if any
+  var previousRequire =
+    typeof globalObject[parcelRequireName] === 'function' &&
+    globalObject[parcelRequireName];
+
+  var cache = previousRequire.cache || {};
+  // Do not use `require` to prevent Webpack from trying to bundle this call
+  var nodeRequire =
+    typeof module !== 'undefined' &&
+    typeof module.require === 'function' &&
+    module.require.bind(module);
+
+  function newRequire(name, jumped) {
+    if (!cache[name]) {
+      if (!modules[name]) {
+        // if we cannot find the module within our internal map or
+        // cache jump to the current global require ie. the last bundle
+        // that was added to the page.
+        var currentRequire =
+          typeof globalObject[parcelRequireName] === 'function' &&
+          globalObject[parcelRequireName];
+        if (!jumped && currentRequire) {
+          return currentRequire(name, true);
+        }
+
+        // If there are other bundles on this page the require from the
+        // previous one is saved to 'previousRequire'. Repeat this as
+        // many times as there are bundles until the module is found or
+        // we exhaust the require chain.
+        if (previousRequire) {
+          return previousRequire(name, true);
+        }
+
+        // Try the node require function if it exists.
+        if (nodeRequire && typeof name === 'string') {
+          return nodeRequire(name);
+        }
+
+        var err = new Error("Cannot find module '" + name + "'");
+        err.code = 'MODULE_NOT_FOUND';
+        throw err;
+      }
+
+      localRequire.resolve = resolve;
+      localRequire.cache = {};
+
+      var module = (cache[name] = new newRequire.Module(name));
+
+      modules[name][0].call(
+        module.exports,
+        localRequire,
+        module,
+        module.exports,
+        this
+      );
+    }
+
+    return cache[name].exports;
+
+    function localRequire(x) {
+      return newRequire(localRequire.resolve(x));
+    }
+
+    function resolve(x) {
+      return modules[name][1][x] || x;
+    }
+  }
+
+  function Module(moduleName) {
+    this.id = moduleName;
+    this.bundle = newRequire;
+    this.exports = {};
+  }
+
+  newRequire.isParcelRequire = true;
+  newRequire.Module = Module;
+  newRequire.modules = modules;
+  newRequire.cache = cache;
+  newRequire.parent = previousRequire;
+  newRequire.register = function(id, exports) {
+    modules[id] = [
+      function(require, module) {
+        module.exports = exports;
+      },
+      {},
+    ];
+  };
+
+  Object.defineProperty(newRequire, 'root', {
+    get: function() {
+      return globalObject[parcelRequireName];
+    },
+  });
+
+  globalObject[parcelRequireName] = newRequire;
+
+  for (var i = 0; i < entry.length; i++) {
+    newRequire(entry[i]);
+  }
+
+  if (mainEntry) {
+    // Expose entry point to Node, AMD or browser globals
+    // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
+    var mainExports = newRequire(mainEntry);
+
+    // CommonJS
+    if (typeof exports === 'object' && typeof module !== 'undefined') {
+      module.exports = mainExports;
+
+      // RequireJS
+    } else if (typeof define === 'function' && define.amd) {
+      define(function() {
+        return mainExports;
+      });
+
+      // <script>
+    } else if (globalName) {
+      this[globalName] = mainExports;
+    }
+  }
+})({"6Lvqk":[function(require,module,exports) {
+var HMR_HOST = null;
+var HMR_PORT = null;
+var HMR_SECURE = false;
+var HMR_ENV_HASH = "f2c9685dad4863d1";
+module.bundle.HMR_BUNDLE_ID = "be32fc7bbffac9e1";
+"use strict";
+function _createForOfIteratorHelper(o, allowArrayLike) {
+    var it;
+    if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+        if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+            if (it) o = it;
+            var i = 0;
+            var F = function F1() {
+            };
+            return {
+                s: F,
+                n: function n() {
+                    if (i >= o.length) return {
+                        done: true
+                    };
+                    return {
+                        done: false,
+                        value: o[i++]
+                    };
+                },
+                e: function e(_e) {
+                    throw _e;
+                },
+                f: F
+            };
+        }
+        throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+    var normalCompletion = true, didErr = false, err;
+    return {
+        s: function s() {
+            it = o[Symbol.iterator]();
+        },
+        n: function n() {
+            var step = it.next();
+            normalCompletion = step.done;
+            return step;
+        },
+        e: function e(_e2) {
+            didErr = true;
+            err = _e2;
+        },
+        f: function f() {
+            try {
+                if (!normalCompletion && it.return != null) it.return();
+            } finally{
+                if (didErr) throw err;
+            }
+        }
+    };
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+/* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE */ /*::
+import type {
+  HMRAsset,
+  HMRMessage,
+} from '@parcel/reporter-dev-server/src/HMRServer.js';
+interface ParcelRequire {
+  (string): mixed;
+  cache: {|[string]: ParcelModule|};
+  hotData: mixed;
+  Module: any;
+  parent: ?ParcelRequire;
+  isParcelRequire: true;
+  modules: {|[string]: [Function, {|[string]: string|}]|};
+  HMR_BUNDLE_ID: string;
+  root: ParcelRequire;
+}
+interface ParcelModule {
+  hot: {|
+    data: mixed,
+    accept(cb: (Function) => void): void,
+    dispose(cb: (mixed) => void): void,
+    // accept(deps: Array<string> | string, cb: (Function) => void): void,
+    // decline(): void,
+    _acceptCallbacks: Array<(Function) => void>,
+    _disposeCallbacks: Array<(mixed) => void>,
+  |};
+}
+declare var module: {bundle: ParcelRequire, ...};
+declare var HMR_HOST: string;
+declare var HMR_PORT: string;
+declare var HMR_ENV_HASH: string;
+declare var HMR_SECURE: boolean;
+*/ var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+function Module(moduleName) {
+    OldModule.call(this, moduleName);
+    this.hot = {
+        data: module.bundle.hotData,
+        _acceptCallbacks: [],
+        _disposeCallbacks: [],
+        accept: function accept(fn) {
+            this._acceptCallbacks.push(fn || function() {
+            });
+        },
+        dispose: function dispose(fn) {
+            this._disposeCallbacks.push(fn);
+        }
+    };
+    module.bundle.hotData = undefined;
+}
+module.bundle.Module = Module;
+var checkedAssets, acceptedAssets, assetsToAccept;
+function getHostname() {
+    return HMR_HOST || (location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost');
+}
+function getPort() {
+    return HMR_PORT || location.port;
+} // eslint-disable-next-line no-redeclare
+var parent = module.bundle.parent;
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+    var hostname = getHostname();
+    var port = getPort();
+    var protocol = HMR_SECURE || location.protocol == 'https:' && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? 'wss' : 'ws';
+    var ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/'); // $FlowFixMe
+    ws.onmessage = function(event) {
+        checkedAssets = {
+        };
+        acceptedAssets = {
+        };
+        assetsToAccept = [];
+        var data = JSON.parse(event.data);
+        if (data.type === 'update') {
+            // Remove error overlay if there is one
+            removeErrorOverlay();
+            var assets = data.assets.filter(function(asset) {
+                return asset.envHash === HMR_ENV_HASH;
+            }); // Handle HMR Update
+            var handled = assets.every(function(asset) {
+                return asset.type === 'css' || asset.type === 'js' && hmrAcceptCheck(module.bundle.root, asset.id, asset.depsByBundle);
+            });
+            if (handled) {
+                console.clear();
+                assets.forEach(function(asset) {
+                    hmrApply(module.bundle.root, asset);
+                });
+                for(var i = 0; i < assetsToAccept.length; i++){
+                    var id = assetsToAccept[i][1];
+                    if (!acceptedAssets[id]) hmrAcceptRun(assetsToAccept[i][0], id);
+                }
+            } else window.location.reload();
+        }
+        if (data.type === 'error') {
+            // Log parcel errors to console
+            var _iterator = _createForOfIteratorHelper(data.diagnostics.ansi), _step;
+            try {
+                for(_iterator.s(); !(_step = _iterator.n()).done;){
+                    var ansiDiagnostic = _step.value;
+                    var stack = ansiDiagnostic.codeframe ? ansiDiagnostic.codeframe : ansiDiagnostic.stack;
+                    console.error('🚨 [parcel]: ' + ansiDiagnostic.message + '\n' + stack + '\n\n' + ansiDiagnostic.hints.join('\n'));
+                } // Render the fancy html overlay
+            } catch (err) {
+                _iterator.e(err);
+            } finally{
+                _iterator.f();
+            }
+            removeErrorOverlay();
+            var overlay = createErrorOverlay(data.diagnostics.html); // $FlowFixMe
+            document.body.appendChild(overlay);
+        }
+    };
+    ws.onerror = function(e) {
+        console.error(e.message);
+    };
+    ws.onclose = function() {
+        console.warn('[parcel] 🚨 Connection to the HMR server was lost');
+    };
+}
+function removeErrorOverlay() {
+    var overlay = document.getElementById(OVERLAY_ID);
+    if (overlay) {
+        overlay.remove();
+        console.log('[parcel] ✨ Error resolved');
+    }
+}
+function createErrorOverlay(diagnostics) {
+    var overlay = document.createElement('div');
+    overlay.id = OVERLAY_ID;
+    var errorHTML = '<div style="background: black; opacity: 0.85; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; font-family: Menlo, Consolas, monospace; z-index: 9999;">';
+    var _iterator2 = _createForOfIteratorHelper(diagnostics), _step2;
+    try {
+        for(_iterator2.s(); !(_step2 = _iterator2.n()).done;){
+            var diagnostic = _step2.value;
+            var stack = diagnostic.codeframe ? diagnostic.codeframe : diagnostic.stack;
+            errorHTML += "\n      <div>\n        <div style=\"font-size: 18px; font-weight: bold; margin-top: 20px;\">\n          \uD83D\uDEA8 ".concat(diagnostic.message, "\n        </div>\n        <pre>\n          ").concat(stack, "\n        </pre>\n        <div>\n          ").concat(diagnostic.hints.map(function(hint) {
+                return '<div>' + hint + '</div>';
+            }).join(''), "\n        </div>\n      </div>\n    ");
+        }
+    } catch (err) {
+        _iterator2.e(err);
+    } finally{
+        _iterator2.f();
+    }
+    errorHTML += '</div>';
+    overlay.innerHTML = errorHTML;
+    return overlay;
+}
+function getParents(bundle, id) /*: Array<[ParcelRequire, string]> */ {
+    var modules = bundle.modules;
+    if (!modules) return [];
+    var parents = [];
+    var k, d, dep;
+    for(k in modules)for(d in modules[k][1]){
+        dep = modules[k][1][d];
+        if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) parents.push([
+            bundle,
+            k
+        ]);
+    }
+    if (bundle.parent) parents = parents.concat(getParents(bundle.parent, id));
+    return parents;
+}
+function updateLink(link) {
+    var newLink = link.cloneNode();
+    newLink.onload = function() {
+        if (link.parentNode !== null) // $FlowFixMe
+        link.parentNode.removeChild(link);
+    };
+    newLink.setAttribute('href', link.getAttribute('href').split('?')[0] + '?' + Date.now()); // $FlowFixMe
+    link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+var cssTimeout = null;
+function reloadCSS() {
+    if (cssTimeout) return;
+    cssTimeout = setTimeout(function() {
+        var links = document.querySelectorAll('link[rel="stylesheet"]');
+        for(var i = 0; i < links.length; i++){
+            // $FlowFixMe[incompatible-type]
+            var href = links[i].getAttribute('href');
+            var hostname = getHostname();
+            var servedFromHMRServer = hostname === 'localhost' ? new RegExp('^(https?:\\/\\/(0.0.0.0|127.0.0.1)|localhost):' + getPort()).test(href) : href.indexOf(hostname + ':' + getPort());
+            var absolute = /^https?:\/\//i.test(href) && href.indexOf(window.location.origin) !== 0 && !servedFromHMRServer;
+            if (!absolute) updateLink(links[i]);
+        }
+        cssTimeout = null;
+    }, 50);
+}
+function hmrApply(bundle, asset) {
+    var modules = bundle.modules;
+    if (!modules) return;
+    if (asset.type === 'css') {
+        reloadCSS();
+        return;
+    }
+    var deps = asset.depsByBundle[bundle.HMR_BUNDLE_ID];
+    if (deps) {
+        var fn = new Function('require', 'module', 'exports', asset.output);
+        modules[asset.id] = [
+            fn,
+            deps
+        ];
+    } else if (bundle.parent) hmrApply(bundle.parent, asset);
+}
+function hmrAcceptCheck(bundle, id, depsByBundle) {
+    var modules = bundle.modules;
+    if (!modules) return;
+    if (depsByBundle && !depsByBundle[bundle.HMR_BUNDLE_ID]) {
+        // If we reached the root bundle without finding where the asset should go,
+        // there's nothing to do. Mark as "accepted" so we don't reload the page.
+        if (!bundle.parent) return true;
+        return hmrAcceptCheck(bundle.parent, id, depsByBundle);
+    }
+    if (checkedAssets[id]) return;
+    checkedAssets[id] = true;
+    var cached = bundle.cache[id];
+    assetsToAccept.push([
+        bundle,
+        id
+    ]);
+    if (cached && cached.hot && cached.hot._acceptCallbacks.length) return true;
+    return getParents(module.bundle.root, id).some(function(v) {
+        return hmrAcceptCheck(v[0], v[1], null);
+    });
+}
+function hmrAcceptRun(bundle, id) {
+    var cached = bundle.cache[id];
+    bundle.hotData = {
+    };
+    if (cached && cached.hot) cached.hot.data = bundle.hotData;
+    if (cached && cached.hot && cached.hot._disposeCallbacks.length) cached.hot._disposeCallbacks.forEach(function(cb) {
+        cb(bundle.hotData);
+    });
+    delete bundle.cache[id];
+    bundle(id);
+    cached = bundle.cache[id];
+    if (cached && cached.hot && cached.hot._acceptCallbacks.length) cached.hot._acceptCallbacks.forEach(function(cb) {
+        var assetsToAlsoAccept = cb(function() {
+            return getParents(module.bundle.root, id);
+        });
+        if (assetsToAlsoAccept && assetsToAccept.length) // $FlowFixMe[method-unbinding]
+        assetsToAccept.push.apply(assetsToAccept, assetsToAlsoAccept);
+    });
+    acceptedAssets[id] = true;
+}
+
+},{}],"9qz3f":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _indexMjs = require("./index.mjs");
+var _indexMjsDefault = parcelHelpers.interopDefault(_indexMjs);
+_indexMjsDefault.default().then(async (html)=>{
+    console.log('html', html);
+});
+
+},{"./index.mjs":"gatQI","@parcel/transformer-js/src/esmodule-helpers.js":"bv87c"}],"gatQI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _isEmptyMjs = require("./modules/isEmpty/isEmpty.mjs");
+var _isEmptyMjsDefault = parcelHelpers.interopDefault(_isEmptyMjs);
+var _bemParserMjs = require("./modules/bem/bemParser.mjs");
+var _bemParserMjsDefault = parcelHelpers.interopDefault(_bemParserMjs);
+exports.default = (debug = true, doc = document.body)=>{
+    return new Promise(async (resolve, reject)=>{
+        try {
+            let object = {
+            };
+            object.obj = {
+            };
+            object.params = {
+            };
+            object.params.debug = debug;
+            let ID = doc.querySelectorAll("[id]");
+            let CLASS = doc.querySelectorAll("[class]");
+            object.obj = await _bemParserMjsDefault.default(object.obj, ID, {
+                type: 'id'
+            });
+            object.obj = await _bemParserMjsDefault.default(object.obj, CLASS, {
+                type: 'class'
+            });
+            resolve(new Proxy(object.obj, {
+                get: (obj, prop)=>{
+                    if (object.params.debug) console.log({
+                        _: 'proxy get',
+                        prop: prop,
+                        obj: obj,
+                        value: obj[prop]
+                    });
+                    return obj[prop];
+                },
+                set: (obj, prop, value)=>{
+                    if (object.params.debug) console.log({
+                        _: 'proxy set',
+                        prop: prop,
+                        obj: obj,
+                        value: value
+                    });
+                    if (_isEmptyMjsDefault.default(obj[prop])) obj[prop] = [];
+                    obj[prop] = value;
+                    return true;
+                }
+            }));
+        } catch (e) {
+            resolve({
+                message: e.message,
+                success: true,
+                status: true
+            });
+        }
+    });
+};
+
+},{"./modules/isEmpty/isEmpty.mjs":"8uh5S","./modules/bem/bemParser.mjs":"la1Ka","@parcel/transformer-js/src/esmodule-helpers.js":"bv87c"}],"8uh5S":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+let has = Object.prototype.hasOwnProperty;
+let toString = Object.prototype.toString;
+function isEmpty(val) {
+    // Null and Undefined...
+    if (val == null) return true;
+    // Booleans...
+    if ('boolean' == typeof val) return false;
+    // Numbers...
+    if ('number' == typeof val) return val === 0;
+    // Strings...
+    if ('string' == typeof val) return val.length === 0;
+    // Functions...
+    if ('function' == typeof val) return val.length === 0;
+    // Arrays...
+    if (Array.isArray(val)) {
+        let object = val instanceof Object;
+        if (object) return Object.keys(val).length === 0;
+        else return val.length === 0;
+    }
+    // Errors...
+    if (val instanceof Error) return val.message === '';
+    // Objects...
+    if (val.toString == toString) switch(val.toString()){
+        // Maps, Sets, Files and Errors...
+        case '[object File]':
+        case '[object Map]':
+        case '[object Set]':
+            return val.size === 0;
+        // Plain objects...
+        case '[object Object]':
+            for(var key in val){
+                if (has.call(val, key)) return false;
+            }
+            return true;
+    }
+    // Anything else...
+    return false;
+}
+exports.default = isEmpty;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"bv87c"}],"bv87c":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule') return;
+        // Skip duplicate re-exports when they have the same value.
+        if (key in dest && dest[key] === source[key]) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"la1Ka":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _isEmptyMjs = require("../isEmpty/isEmpty.mjs");
+var _isEmptyMjsDefault = parcelHelpers.interopDefault(_isEmptyMjs);
+var _bemJs = require("./bem.js");
+var _bemJsDefault = parcelHelpers.interopDefault(_bemJs);
+function process(obj, parse, elemMod, splitElem, elemModVal, deepElement, element) {
+    for(let key in parse)switch(key){
+        case 'block':
+            break;
+        case 'elem':
+            switch(deepElement){
+                case 0:
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]])) obj[splitElem[0]] = [];
+                    if (elemMod) {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]]['main'])) obj[splitElem[0]]['main'] = [];
+                        obj[splitElem[0]]['main'].push(element);
+                    }
+                    break;
+                case 1:
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]])) obj[splitElem[0]] = [];
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]])) obj[splitElem[0]][splitElem[1]] = [];
+                    if (elemMod) {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]]['main'])) obj[splitElem[0]][splitElem[1]]['main'] = [];
+                        obj[splitElem[0]][splitElem[1]]['main'].push(element);
+                    }
+                    break;
+                case 2:
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]])) obj[splitElem[0]] = [];
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]])) obj[splitElem[0]][splitElem[1]] = [];
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]])) obj[splitElem[0]][splitElem[1]][splitElem[2]] = [];
+                    if (elemMod) {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]]['main'])) obj[splitElem[0]][splitElem[1]][splitElem[2]]['main'] = [];
+                        obj[splitElem[0]][splitElem[1]][splitElem[2]]['main'].push(element);
+                    }
+                    break;
+                case 3:
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]])) obj[splitElem[0]] = [];
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]])) obj[splitElem[0]][splitElem[1]] = [];
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]])) obj[splitElem[0]][splitElem[1]][splitElem[2]] = [];
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]])) obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]] = [];
+                    if (elemMod) {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]]['main'])) obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]]['main'] = [];
+                        obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]]['main'].push(element);
+                    }
+                    break;
+                case 4:
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]])) obj[splitElem[0]] = [];
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]])) obj[splitElem[0]][splitElem[1]] = [];
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]])) obj[splitElem[0]][splitElem[1]][splitElem[2]] = [];
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]])) obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]] = [];
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][splitElem[4]])) obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][splitElem[4]] = [];
+                    if (elemMod) {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][splitElem[4]]['main'])) obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][splitElem[4]]['main'] = [];
+                        obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][splitElem[4]]['main'].push(element);
+                    }
+                    break;
+                default:
+                    console.warn('не хватает ячеек');
+                    break;
+            }
+            break;
+        case 'elemMod':
+            switch(deepElement){
+                case 0:
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][`${parse.elemMod}`])) obj[splitElem[0]][`${parse.elemMod}`] = [];
+                    if (elemModVal) {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][`${parse.elemMod}`][`${parse.elemModVal}`])) obj[splitElem[0]][`${parse.elemMod}`][`${parse.elemModVal}`] = [];
+                        obj[splitElem[0]][`${parse.elemMod}`][`${parse.elemModVal}`].push(element);
+                    } else {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][`${parse.elemMod}`]['main'])) obj[splitElem[0]][`${parse.elemMod}`]['main'] = [];
+                        obj[splitElem[0]][`${parse.elemMod}`]['main'].push(element);
+                    }
+                    break;
+                case 1:
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][`${parse.elemMod}`])) obj[splitElem[0]][splitElem[1]][`${parse.elemMod}`] = [];
+                    if (elemModVal) {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][`${parse.elemMod}`][`${parse.elemModVal}`])) obj[splitElem[0]][splitElem[1]][`${parse.elemMod}`][`${parse.elemModVal}`] = [];
+                        obj[splitElem[0]][splitElem[1]][`${parse.elemMod}`][`${parse.elemModVal}`].push(element);
+                    } else {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][`${parse.elemMod}`]['main'])) obj[splitElem[0]][splitElem[1]][`${parse.elemMod}`]['main'] = [];
+                        obj[splitElem[0]][splitElem[1]][`${parse.elemMod}`]['main'].push(element);
+                    }
+                    break;
+                case 2:
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][`${parse.elemMod}`])) obj[splitElem[0]][splitElem[1]][splitElem[2]][`${parse.elemMod}`] = [];
+                    if (elemModVal) {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][`${parse.elemMod}`][`${parse.elemModVal}`])) obj[splitElem[0]][splitElem[1]][splitElem[2]][`${parse.elemMod}`][`${parse.elemModVal}`] = [];
+                        obj[splitElem[0]][splitElem[1]][splitElem[2]][`${parse.elemMod}`][`${parse.elemModVal}`].push(element);
+                    } else {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][`${parse.elemMod}`]['main'])) obj[splitElem[0]][splitElem[1]][splitElem[2]][`${parse.elemMod}`]['main'] = [];
+                        obj[splitElem[0]][splitElem[1]][splitElem[2]][`${parse.elemMod}`]['main'].push(element);
+                    }
+                    break;
+                case 3:
+                    if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][`${parse.elemMod}`])) obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][`${parse.elemMod}`] = [];
+                    if (elemModVal) {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][`${parse.elemMod}`][`${parse.elemModVal}`])) obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][`${parse.elemMod}`][`${parse.elemModVal}`] = [];
+                        obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][`${parse.elemMod}`][`${parse.elemModVal}`].push(element);
+                    } else {
+                        if (_isEmptyMjsDefault.default(obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][`${parse.elemMod}`]['main'])) obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][`${parse.elemMod}`]['main'] = [];
+                        obj[splitElem[0]][splitElem[1]][splitElem[2]][splitElem[3]][`${parse.elemMod}`]['main'].push(element);
+                    }
+                    break;
+                default:
+                    console.log('недостаточно ячеек для обработки');
+                    break;
+            }
+            break;
+        case 'elemModVal':
+            break;
+        default:
+            console.log('неизвестное свойство', key, {
+                obj: parse
+            });
+            break;
+    }
+}
+exports.default = (API, substrate, property)=>{
+    return new Promise(async (resolve, reject)=>{
+        let obj = {
+        };
+        substrate.forEach((element)=>{
+            let id = {
+            };
+            let classList = 1;
+            if (property.type === 'id') id = element.id;
+            else if (property.type === 'class') element.classList.length === 1 ? id = element.className : id = element.classList;
+            else if (property.type === 'slot') id = element.slot;
+            else console.warn('неизвестный тип', property);
+            let parse = {
+            };
+            let elemMod = {
+            };
+            let elemModVal = {
+            };
+            let deepElement = 0;
+            let splitElem = {
+            };
+            if (typeof id === 'object') for (let itemClass of id){
+                parse = _bemJsDefault.default(itemClass);
+                elemMod = !('elemMod' in parse);
+                elemModVal = 'elemModVal' in parse;
+                deepElement = 0;
+                splitElem = {
+                };
+                if ('elem' in parse) {
+                    splitElem = parse['elem'].split('-');
+                    deepElement = splitElem.length - 1;
+                }
+                console.log('aaaaaaaaaa', parse);
+                process(obj, parse, elemMod, splitElem, elemModVal, deepElement, element);
+            }
+            else {
+                parse = _bemJsDefault.default(id);
+                elemMod = !('elemMod' in parse);
+                elemModVal = 'elemModVal' in parse;
+                deepElement = 0;
+                splitElem = {
+                };
+                if ('elem' in parse) {
+                    splitElem = parse['elem'].split('-');
+                    deepElement = splitElem.length - 1;
+                }
+                process(obj, parse, elemMod, splitElem, elemModVal, deepElement, element);
+            }
+        });
+        if (property.type === 'id') API['id'] = obj;
+        else if (property.type === 'class') API['class'] = obj;
+        else if (property.type === 'slot') API['slot'] = obj;
+        else console.warn('неизвестный тип');
+        obj = {
+        };
+        resolve(API);
+    });
+};
+
+},{"../isEmpty/isEmpty.mjs":"8uh5S","./bem.js":"jqg7W","@parcel/transformer-js/src/esmodule-helpers.js":"bv87c"}],"jqg7W":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function parseBemIdentifier(pattern, options) {
+    var result = {
+    };
+    options = options || {
+    };
+    var short = options.short;
+    var blockElement = pattern.split('__');
+    var blockArray = blockElement[0].split('_');
+    result.block = blockArray[0];
+    if (blockArray.length > 1) {
+        result.mod = blockArray[1];
+        if (blockArray[2]) result[short ? 'val' : 'modVal'] = blockArray[2];
+    }
+    if (blockElement.length > 1) {
+        var elementArray = blockElement[1].split('_');
+        result.elem = elementArray[0];
+        if (elementArray.length > 1) {
+            result[short ? 'mod' : 'elemMod'] = elementArray[1];
+            if (elementArray[2]) result[short ? 'val' : 'elemModVal'] = elementArray[2];
+        }
+    }
+    return result;
+}
+exports.default = parseBemIdentifier;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"bv87c"}]},["6Lvqk","9qz3f"], "9qz3f", "parcelRequire8604")
+
+</script>
+</html>
